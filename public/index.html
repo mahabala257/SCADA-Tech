@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SCADA Tech | Automation</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1 class="logo">SCADA<span>Tech</span></h1>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#brochure">Brochure</a>
+        <a href="#contact">Register</a>
+        <a href="/auth/login" class="staff-login">
+          <svg class="login-icon" viewBox="0 0 24 24" width="16" height="16">
+            <path fill="currentColor" d="M12,4A4,4 0 0,1 16,8A4,4 0 0,1 12,12A4,4 0 0,1 8,8A4,4 0 0,1 12,4M12,14C16.42,14 20,15.79 20,18V20H4V18C4,15.79 7.58,14 12,14Z"/>
+          </svg>
+          <span>Staff Portal</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to SCADA Tech</h2>
+    <p>Accelerating digital transformation with intelligent monitoring and control platforms for the modern age.</p>
+    <a href="pdf.html" target="_blank" class="btn">SCADA System Overview</a>
+  </section>
+
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p>
+      SCADA Tech is a cutting-edge automation company specializing in SCADA systems. We help industries streamline operations, enhance monitoring, and achieve operational excellence through intelligent, data-driven solutions.
+      Our team combines engineering expertise with modern technology to deliver scalable, secure, and real-time automation platforms tailored for manufacturing, energy, water treatment, and other industrial sectors.
+      With a focus on reliability, integration, and innovation, SCADA Tech empowers businesses to make faster, smarter decisions — unlocking the full potential of industrial automation.
+    </p>
+  </section>
+
+  <section id="services" class="section services-grid">
+    <h3>Our Services</h3>
+    <div class="card-container">
+      <div class="card">
+        <h4>🌀 Real-Time Monitoring Dashboards</h4>
+        <p>Track operations instantly with dynamic, user-friendly dashboards that display live system data for timely decisions.</p>
+      </div>
+      <div class="card">
+        <h4>🔐 Secure Industrial Networks</h4>
+        <p>Protect your infrastructure with encrypted communication and intrusion detection.</p>
+      </div>
+      <div class="card">
+        <h4>📊 Data Logging & Predictive Analytics</h4>
+        <p>Continuously capture system data to identify trends, forecast failures, and drive proactive maintenance strategies.</p>
+      </div>
+      <div class="card">
+        <h4>📡 IoT & Cloud-Integrated SCADA Systems</h4>
+        <p>Seamlessly connect field devices to the cloud for scalable control, remote access, and advanced data intelligence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="brochure" class="section">
+    <h3>Brochure</h3>
+    <div class="brochure-layout">
+      <div class="brochure-box">
+        <h4>Why Choose Us</h4>
+        <ul>
+          <li><span>🧠</span> 10+ Years of Automation Expertise</li>
+          <li><span>⚙️</span> Tailored SCADA Deployments</li>
+          <li><span>📞</span> 24/7 Technical Support</li>
+          <li><span>🚀</span> Scalable & Future-Ready Architecture</li>
+        </ul>
+      </div>
+      <div class="brochure-box">
+        <h4>Company Contact</h4>
+        <ul>
+          <li><span>📧</span> <a href="mailto:automators@scadatech.io">automators@scadatech.io</a></li>
+          <li><span>🌐</span> <a href="https://www.scadatech.io" target="_blank">www.scadatech.io</a></li>
+          <li><span>📱</span> +91 98765 43210</li>
+          <li><span>📞</span> 04142-123456</li>
+          <li><span>📍</span> Neyveli, India</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="careers" class="section">
+    <h3>Careers</h3>
+    <p>
+      At SCADA Tech, we're building the future of industrial automation — and we're looking for driven, curious minds to join us.
+      Whether you're an experienced engineer, a research student, or a teaching professional with a passion for real-world applications, we offer a collaborative environment where innovation thrives.
+      From internships to leadership roles, SCADA Tech is the place to grow your skills and make a meaningful impact.
+    </p><br>
+    <p>
+      Send your resume to <strong>automators@scadatech.io</strong> to explore exciting career opportunities with us.
+    </p>
+  </section>
+       <section id="contact" class="section">
+     <h3>Register Here</h3>
+     <form id="contact-form" action="/submit" method="POST" enctype="multipart/form-data">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <input type="tel" name="phone" placeholder="Your Phone" pattern="\d{10}" required>
+      <input type="hidden" name="userType" value="client">
+      <label>
+        <input type="checkbox" name="internship" id="internship-checkbox">
+        Applying for internship
+      </label>
+      <div id="resume-section" style="display:none;">
+        <label>Upload Resume (PDF, max 2MB)</label>
+        <input type="file" name="resume" accept=".pdf">
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+  <script>
+    document.getElementById("internship-checkbox").addEventListener("change", function() {
+       const userTypeField = document.querySelector("input[name='userType']");
+       userTypeField.value = this.checked ? "candidate" : "client";
+       document.getElementById("resume-section").style.display = this.checked ? "block" : "none";
+     });
+  </script>
+  <footer style="background: #0b0f1a; color: #ccc; padding: 40px 20px; text-align: center; font-size: 0.95rem;">
+  <div style="max-width: 1000px; margin: auto;">
+    <p style="margin-bottom: 10px;">
+      &copy; <span id="year"></span> SCADA Tech. All Rights Reserved.
+    </p>
+    <p>
+      Designed & Developed by SCADA Tech Team | 
+      <a href="mailto:contact@scadatech.com" style="color: #00e0ff; text-decoration: none;">Contact Us</a>
+    </p>
+    <div style="margin-top: 10px;">
+      <a href="/" style="color: #9b51e0; margin: 0 10px;">Home</a> |
+      <a href="/about.html" style="color: #9b51e0; margin: 0 10px;">About</a> |
+      <a href="/services.html" style="color: #9b51e0; margin: 0 10px;">Services</a> |
+      <a href="/careers.html" style="color: #9b51e0; margin: 0 10px;">Careers</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Dynamically update year
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

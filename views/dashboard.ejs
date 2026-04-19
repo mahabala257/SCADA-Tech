@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Staff Dashboard | SCADA Tech</title>
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #444;
+      text-align: left;
+    }
+    th {
+      background-color: #9b51e0;
+      color: white;
+    }
+    .logout-btn {
+      display: block;
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <h2>Welcome, <%= staffName %></h2>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Date</th>
+          <th>Internship</th>
+          <th>Resume</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% submissions.forEach(sub => { %>
+          <tr>
+            <td><%= sub.name %></td>
+            <td><%= sub.email %></td>
+            <td><%= sub.phone %></td>
+            <td><%= sub.createdAt.toDateString() %></td>
+            <td><%= sub.internship ? 'Yes' : 'No' %></td>
+            <td>
+              <% if (sub.internship && sub.resume) { %>
+                <a href="/dashboard/resume/<%= sub.resume %>" target="_blank">View</a>
+              <% } else { %>
+                N/A
+              <% } %>
+            </td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+
+    <a href="/auth/logout" class="logout-btn">Logout</a>
+  </div>
+</body>
+</html>
