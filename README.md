@@ -71,5 +71,3 @@ nlc web design/
 - Email notifications
 - Deployment (Render / Railway)
 
-## 👨‍💻 Author
-**Mahalakshmi B (mahabala257) **
